@@ -1,7 +1,29 @@
 import React from "react"
+import { connect } from "react-redux"
 
-const Counter = () => {
-  return <div>Counter</div>
+const Counter = ({ count, increment, decrement }) => {
+  return (
+    <div>
+      <p>Clicked {count} times</p>
+      <div>
+        <button onClick={increment}>Increment</button>
+        <button onClick={decrement}>Decrement</button>
+      </div>
+    </div>
+  )
 }
 
-export default Counter
+const mapStateToProps = (state) => {
+  return {
+    count: state.count,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    increment: () => dispatch({ type: "INCREMENT" }),
+    decrement: () => dispatch({ type: "DECREMENT" }),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Counter)
