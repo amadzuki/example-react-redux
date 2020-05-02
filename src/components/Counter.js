@@ -1,10 +1,10 @@
 import React from "react"
 import { connect } from "react-redux"
 
-const Counter = ({ count, increment, decrement }) => {
+const Counter = ({ counter, increment, decrement }) => {
   return (
     <div>
-      <p>Clicked {count} times</p>
+      <p>Clicked {counter} times</p>
       <div>
         <button onClick={increment}>Increment</button>
         <button onClick={decrement}>Decrement</button>
@@ -15,7 +15,7 @@ const Counter = ({ count, increment, decrement }) => {
 
 const mapStateToProps = (state) => {
   return {
-    count: state.count,
+    counter: state.counter,
   }
 }
 

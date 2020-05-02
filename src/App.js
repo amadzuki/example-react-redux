@@ -5,27 +5,10 @@ import { Provider } from "react-redux"
 import Content from "./components/Content"
 import Counter from "./components/Counter"
 
-const initialState = {
-  count: 0,
-}
-
-const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    case "INCREMENT":
-      return {
-        count: state.count + 1,
-      }
-    case "DECREMENT":
-      return {
-        count: state.count - 1,
-      }
-    default:
-      return state
-  }
-}
+import rootReducer from "./reducers/index"
 
 const reduxStore = createStore(
-  reducer,
+  rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 

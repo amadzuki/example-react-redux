@@ -2,12 +2,12 @@ import React from "react"
 import { connect } from "react-redux"
 
 const Content = (props) => {
-  return <h1>How Many? {props.count} times!!</h1>
+  return <h1>How Many? {props.counter} times!!</h1>
 }
 
 const mapStateToProps = (state) => {
   return {
-    count: state.count,
+    counter: state.counter,
   }
 }
 
