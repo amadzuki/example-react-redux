@@ -1,7 +1,14 @@
 import React from "react"
+import { connect } from "react-redux"
 
-const Content = () => {
-  return <div>Content</div>
+const Content = (props) => {
+  return <h1>How Many? {props.count} times!!</h1>
 }
 
-export default Content
+const mapStateToProps = (state) => {
+  return {
+    count: state.count,
+  }
+}
+
+export default connect(mapStateToProps)(Content)
